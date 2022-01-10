@@ -16,8 +16,6 @@ protocol SearchBookServiceInterface: AnyObject {
 
 class SearchBookService: NetworkService, SearchBookServiceInterface {
     
-    private lazy var networkService = NetworkService()
-    
     func searchBooks(by text: String, completion: @escaping SearchResponse) {
         let request = Request.searchBooks(text: text)
         execute(type: request, completion: completion)
