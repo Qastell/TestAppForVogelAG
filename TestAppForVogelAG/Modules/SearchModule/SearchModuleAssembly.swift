@@ -12,7 +12,7 @@ enum SearchModuleAssembly {
     
     static func create() -> SearchModuleViewController {
         let view = SearchModuleViewController()
-        let presenter = SearchModulePresenter()
+        let presenter = SearchModulePresenter(searchService: SearchBookService())
         
         let router = SearchModuleRouter()
         router.viewController = view

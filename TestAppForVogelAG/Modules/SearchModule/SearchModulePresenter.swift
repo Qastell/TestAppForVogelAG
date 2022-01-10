@@ -17,11 +17,15 @@ class SearchModulePresenter: Presenter {
     weak var view: SearchModuleViewControllerProtocol?
     var router: SearchModuleRouterInput?
     
-    private lazy var searchService = SearchBookService()
+    private let searchService: SearchBookServiceInterface
     
     private var dispatchItem: DispatchWorkItem?
     
     private var bookModels: [BookResponseModel] = []
+    
+    init(searchService: SearchBookServiceInterface) {
+        self.searchService = searchService
+    }
     
     func viewDidLoad() {
         startSearch(by: String.randomLatinChar)
