@@ -49,7 +49,7 @@ extension SearchModulePresenter: SearchModulePresenterProtocol {
 private extension SearchModulePresenter {
     
     func startSearch(by text: String) {
-        searchService.searchBooks(by: text) { [weak self] (result: Result<SearchBookResponseModel, Error>) in
+        searchService.searchBooks(by: text) { [weak self] result in
             switch result {
             case .success(let value):
                 self?.bookModels = value.items ?? []

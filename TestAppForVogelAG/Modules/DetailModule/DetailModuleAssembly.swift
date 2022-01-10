@@ -10,7 +10,6 @@ import UIKit
 
 enum DetailModuleAssembly {
     
-    // Create and return controller
     static func create(with book: BookResponseModel) -> DetailModuleViewController {
         let view = DetailModuleViewController()
         let presenter = DetailModulePresenter(book: book)
